@@ -1,6 +1,7 @@
 import { useState } from "react";
+import CrimeReportForm from "./CrimeReportForm";
 
-const Header = () => {
+const Header = ({ crimes, setCrimes }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -8,6 +9,7 @@ const Header = () => {
     return (
       <header className="bg-gray-700 text-white py-4 px-6 flex justify-between items-center shadow-md">
         <h1 className="text-xl font-bold">SHADOW WATCH</h1>
+        <CrimeReportForm crimes={crimes} setCrimes={setCrimes} />
         <nav>
           <ul className="hidden sm:flex gap-4">
             <li><a href="#" className="hover:text-yellow-400">Map</a></li>
